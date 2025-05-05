@@ -1,119 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Pagar Nusa Banjarmasin</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #006400;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #004d00;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #003300;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background-color: #006400;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-        a.button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-        }
-        .btn-green {
-            background-color: #006400;
-        }
-        .btn-gray {
-            background-color: #444;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website Resmi Pagar Nusa Banjarmasin - Profil, Jadwal Latihan, Absensi dan Dokumen Unduhan." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <title>Pagar Nusa Banjarmasin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const waktu = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const tanggal = now.toLocaleDateString('id-ID', options);
+      document.getElementById('tanggal').textContent = tanggal;
+      document.getElementById('jam').textContent = waktu;
+    }
+    setInterval(updateTime, 1000);
+    window.onload = updateTime;
+  </script>
 </head>
-<body>
+<body class="bg-green-900 text-white font-sans">
+  <section class="h-screen flex flex-col justify-center items-center bg-cover bg-center text-center" style="background-image: url('LOGO-PAGAR-NUSA.png');">
+    <img src="LOGO-PAGAR-NUSA.png" alt="Logo Pagar Nusa" class="w-40 mb-4">
+    <h1 class="text-4xl font-bold text-yellow-400 drop-shadow-md">PAGAR NUSA Banjarmasin</h1>
+    <div class="mt-2 text-yellow-300 text-lg font-medium drop-shadow-sm">
+      <div id="tanggal"></div>
+      <div id="jam"></div>
+    </div>
+    <div class="mt-6 flex gap-4 flex-wrap justify-center">
+      <a href="#jadwal" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded">Lihat Jadwal Latihan</a>
+      <a href="#menu" class="bg-transparent border border-yellow-500 hover:bg-yellow-500 hover:text-black py-2 px-4 rounded">Masuk Menu</a>
+    </div>
+  </section>
 
-    <header>
-        <h1>Pagar Nusa Banjarmasin</h1>
-        <p>Website Resmi Pencak Silat Nahdlatul Ulama</p>
-    </header>
+  <section id="menu" class="py-10 px-6 bg-green-800 sticky top-0 z-50">
+    <div class="grid md:grid-cols-4 gap-6 text-center">
+      <a href="#profil" class="bg-green-700 p-6 rounded-lg shadow hover:bg-green-600">
+        <div class="text-yellow-400 text-3xl">👤</div>
+        <h2 class="text-xl font-bold mt-2">Profil</h2>
+        <p class="text-sm">Tentang Kami</p>
+      </a>
+      <a href="#jadwal" class="bg-green-700 p-6 rounded-lg shadow hover:bg-green-600">
+        <div class="text-yellow-400 text-3xl">📅</div>
+        <h2 class="text-xl font-bold mt-2">Jadwal</h2>
+        <p class="text-sm">Waktu & Tempat Latihan</p>
+      </a>
+      <a href="#absensi" class="bg-green-700 p-6 rounded-lg shadow hover:bg-green-600">
+        <div class="text-yellow-400 text-3xl">📝</div>
+        <h2 class="text-xl font-bold mt-2">Absensi</h2>
+        <p class="text-sm">Form Kehadiran</p>
+      </a>
+      <a href="#dokumen" class="bg-green-700 p-6 rounded-lg shadow hover:bg-green-600">
+        <div class="text-yellow-400 text-3xl">📄</div>
+        <h2 class="text-xl font-bold mt-2">Dokumen</h2>
+        <p class="text-sm">Panduan & Formulir</p>
+      </a>
+    </div>
+  </section>
 
-    <nav>
-        <a href="#profil">Profil</a>
-        <a href="#lokasi">Lokasi Latihan</a>
-        <a href="#absensi">Absensi</a>
-        <a href="#pendaftaran">Pendaftaran</a>
-    </nav>
+  <section id="profil" class="py-10 px-6">
+    <h2 class="text-2xl font-bold mb-4 text-yellow-400">Profil Pagar Nusa</h2>
+    <p class="mb-4 text-white">Pagar Nusa atau sering disingkat PN, adalah organisasi pencak silat di bawah naungan Nahdlatul Ulama...</p>
+  </section>
 
-    <section id="profil">
-        <h2>Profil</h2>
-        <p>Pagar Nusa (Pagarnusa) adalah perguruan pencak silat yang berada di bawah naungan Nahdlatul Ulama. Kami hadir di Banjarmasin sebagai wadah pelatihan spiritual, bela diri, dan kebangsaan bagi para pemuda.</p>
-    </section>
+  <section id="jadwal" class="py-10 px-6">
+    <h2 class="text-2xl font-bold mb-4 text-yellow-400">Jadwal & Lokasi Latihan</h2>
+    <div class="mb-6">
+      <p class="text-white italic mb-2">Memuat jadwal latihan dari Google Sheets...</p>
+      <iframe src="https://docs.google.com/spreadsheets/d/1_bxui54qXz1zq4yXvEwMDnlTvZwYDo4N97ZOfBlBtIY/pubhtml?widget=true&amp;headers=false" width="100%" height="400px" class="rounded shadow"></iframe>
+    </div>
+  </section>
 
-    <section id="lokasi">
-        <h2>Lokasi Latihan</h2>
-        <ul>
-            <li>Pondok Pesantren Darul Ilmi - Jalan Sungai Andai, Banjarmasin</li>
-            <li>Masjid Raya Sabilal Muhtadin - Jalan Jenderal Sudirman</li>
-        </ul>
-    </section>
+  <section id="absensi" class="py-10 px-6">
+    <h2 class="text-2xl font-bold mb-4 text-yellow-400">Absensi</h2>
+    <p class="text-white mb-4">Klik tombol di bawah untuk mengisi absensi kehadiran latihan:</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-KgHM16vNddVQ5FJB2pqHU0hYKWF8xMr-3Ie-hEBAkEvmpg/viewform?usp=header" 
+       target="_blank"
+       class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
+       Isi Formulir Absensi
+    </a>
+  </section>
 
-    <section id="absensi">
-        <h2>Absensi Kehadiran</h2>
-        <p>Silakan isi absensi latihan melalui Google Form berikut dan unduh formulir pendaftaran:</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-KgHM16vNddVQ5FJB2pqHU0hYKWF8xMr-3Ie-hEBAkEvmpg/viewform?usp=sharing"
-           target="_blank"
-           class="button btn-green">
-    <section id="pendaftaran">
-        <h2>Pendaftaran Anggota</h2>
-        <p>Silakan unduh formulir pendaftaran:</p>
-        <a href="FORMULIR-PENDAFTARAN.pdf"
-           download
-           class="button btn-gray">
-            Download Formulir Pendaftaran
-        </a>
-    </section>
+  <section id="dokumen" class="py-10 px-6">
+    <h2 class="text-2xl font-bold mb-4 text-yellow-400">Dokumen</h2>
+    <p class="text-white mb-4">Klik tombol di bawah untuk mengakses dan mengunduh semua dokumen Pagar Nusa:</p>
+    <a href="https://drive.google.com/drive/folders/1-Xutpxn-MguZKhLm9jbOHZ60g0AL51XM" 
+       target="_blank"
+       class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
+       Buka Folder Dokumen
+    </a>
+  </section>
 
-    <footer>
-        &copy; 2025 Pagar Nusa Banjarmasin. Hak cipta dilindungi.
-    </footer>
-
+  <footer class="bg-green-800 py-6 text-center text-sm text-white">
+    <p>&copy; 2025 Pagar Nusa Banjarmasin. All rights reserved.</p>
+    <p>Hubungi kami di: <a href="mailto:pn.banjarmasin@gmail.com" class="underline">pn.banjarmasin@gmail.com</a></p>
+  </footer>
 </body>
 </html>
